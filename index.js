@@ -1,5 +1,6 @@
 import express from "express";
 import cookieParser from "cookie-parser";
+import cors from "cors"
 
 import hotelRouter from './routes/hotelsRoute.js';
 import authRouter from './routes/authRoute.js';
@@ -9,6 +10,9 @@ import roomRouter from './routes/roomsRoute.js';
 const app = express();
 
 app.use(express.json());
+app.use(cors({
+    origin: "http://127.0.0.1:8000/api/v1"
+}));
 
 app.use(cookieParser());
 
