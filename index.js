@@ -1,6 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors"
+import compression from "compression";
 
 import hotelRouter from './routes/hotelsRoute.js';
 import authRouter from './routes/authRoute.js';
@@ -15,6 +16,7 @@ app.use(cors({
 }));
 
 app.use(cookieParser());
+app.use(compression());
 
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/hotel", hotelRouter);

@@ -2,7 +2,7 @@ import User from '../models/userModel.js';
 
 
 export const getUsers = async(req, res, next) =>{
-    const user = await User.find(req.body);
+    const user = await User.find();
     
     res.status(201).json(user);
     
