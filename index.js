@@ -15,6 +15,18 @@ app.use(cors({
     origin: "http://127.0.0.1:8000/api/v1"
 }));
 
+//To serve the frontend
+// app.use(express.static(path.join(__dirname, "./client/build")));
+
+// app.get("*", function (req, res){
+//     res.sendFile(
+//         path.join(__dirname, './client/build/index.js'),
+//         function (err) {
+//             res.status(500).send(err);
+//         }
+//     );
+// });
+
 app.use(cookieParser());
 app.use(compression());
 
